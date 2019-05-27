@@ -1,0 +1,50 @@
+/* pages/index1/index1.wxss */
+.biaoti {
+  font-size: 50rpx;
+margin-bottom:40rpx; 
+ text-align: center;
+}
+
+
+.wenben{
+  font-size: 30rpx;
+  
+}
+.xiaozi{
+  text-align: center;
+  font-size: 25rpx;
+  color: #C7C7C7;
+  margin-top:100rpx; 
+}
+.hezi{
+  
+  width: 750rpx;
+  
+}
+.container{
+  padding-top: 100rpx;
+  width: 750rpx;
+ 
+
+}
+page{
+  background:#eee;
+}
+
+
+.flex-view-item2{
+  width: 700rpx;
+  border-top:4rpx solid gainsboro;
+  font-size: 50rpx;
+  padding: 20rpx;
+}
+.flex-view-item3{
+  width: 700rpx;
+  border-top:4rpx solid gainsboro;
+  border-bottom:4rpx solid gainsboro;
+  font-size: 50rpx;
+  padding: 20rpx;
+}
+.flex-row{
+  margin-top:50rpx;
+}

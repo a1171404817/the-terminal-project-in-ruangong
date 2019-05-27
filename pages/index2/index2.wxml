@@ -1,0 +1,27 @@
+<!--pages/index1/index1.wxml-->
+
+<view class="container">
+
+<view class="biaoti" ><image mode="widthFix" style='width:300rpx; height:300rpx;' src="../../img/tusiji2.png"></image>
+</view>
+
+<view style="text-align: center;">
+<text style="font-size:50rpx;font-weight:bold;">ehabit\n</text>
+<text style="color:#C7C7C7">v 1.0</text>
+</view>
+
+
+<view class="hezi">
+<view class="biaoti1"><image mode="widthFix" style='width:45rpx; height:45rpx' src="../../img/banben.png"></image> 版本更新说明(v 1.0.4)</view>
+<view class="wenben"style=' width: 600rpx;padding-left:75rpx;padding-right:75rpx;'> <text>增加了日期与星期转化显示的功能；\n添加了小程序的介绍页面;\n完成了每日习惯的数据的持久化</text></view>
+</view>
+
+
+
+<view class="xiaozi">
+<view><text>
+Copyright 2019 ehabit All Right Reserved\n</text>
+<text>ehabit团队版权所有</text>
+</view>
+</view>
+</view>

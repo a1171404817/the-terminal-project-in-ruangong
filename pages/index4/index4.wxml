@@ -1,0 +1,34 @@
+<!--pages/index1/index1.wxml-->
+
+<view class="container">
+
+<view class="biaoti" ><image mode="widthFix" style='width:300rpx; height:300rpx;' src="../../img/tusiji2.png"></image>
+</view>
+
+<view style="text-align: center;">
+<text style="font-size:50rpx;font-weight:bold;">ehabit\n</text>
+<text style="color:#C7C7C7;">v 1.0</text>
+</view>
+
+
+  <view class="flex-row" style="display: block;">
+     <navigator url="../index1/index1"><view class="flex-view-item2">
+     <image mode="widthFix" style='width:45rpx; height:45rpx;' src="../../img/aboutthis.png"></image><text decode="{{true}}">&nbsp;关于ehabit</text> <image mode="widthFix" style='width:40rpx; height:40rpx;display: inline-block;margin-left:265rpx;'src="../../img/jiantou.png"></image> 
+     
+     </view></navigator>
+
+<navigator url="../index2/index2"><view class="flex-view-item2"><image mode="widthFix" style='width:45rpx; height:45rpx;display: inline-block' src="../../img/banben.png"></image> 版本更新 <image mode="widthFix" style='width:40rpx; height:40rpx;display: inline-block;margin-left:300rpx;'src="../../img/jiantou.png"></image>  </view></navigator>
+
+      <navigator url="../index3/index3"><view class="flex-view-item3"><image mode="widthFix" style='width:45rpx; height:45rpx' src="../../img/aboutus.png"></image><text decode="{{true}}">&nbsp;</text>关于我们<image mode="widthFix" style='width:40rpx; height:40rpx;display: inline-block;margin-left:310rpx;'src="../../img/jiantou.png"></image> </view>
+
+</navigator>
+
+  </view>
+
+<view class="xiaozi">
+<view><text>
+Copyright 2019 ehabit All Right Reserved\n</text>
+<text>ehabit团队版权所有</text>
+</view>
+</view>
+</view>

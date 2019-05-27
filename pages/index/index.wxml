@@ -1,0 +1,106 @@
+<!--index.wxml-->
+
+<view class="container">
+  <view class="title1">{{list.length}}个任务</view>
+   <view class="title2">今天·{{listID1+" "+date1[0].week}} </view>
+   
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+  <view class="todoAll" wx:for="{{list}}" wx:for-key="index" wx:for-item="item">
+    <movable-area class="todoArea">
+      <movable-view class="todoBar" direction="horizontal" damping="30" friction="1" out-of-bounds="true" catchtouchstart="start" catchtouchmove="move" catchtouchend="end" id="{{index+1}}" style="background:{{item.chooseColor}}">
+        <view class="text">
+          <view class="todoProgress">{{item.todoProgress}}%</view>
+          <view class="todoText">{{item.todoText}}</view>
+          <view class="todoTime">{{item.todoTime}}</view>
+          <image class="workImg" src="../../img/work.gif" mode="aspectFit" hidden="{{item.work}}"></image>
+          <view class="todoDone">{{item.todoDone}}</view>
+          <progress class="progressBar" percent="{{item.todoProgress}}" activeColor="#1AAD19" backgroundColor="{{item.chooseColor}}" stroke-width="4" active active-mode="forwards"/>
+        </view>
+      </movable-view>
+    </movable-area>
+
+  </view>
+</view>
+
+<image class="tip" src="{{imgSrc}}" mode="aspectFill" style="display:{{firstLog?'block':'none'}}"></image>
+<view class="float" bindtap="float">{{call}}</view>
+<view class="clear" bindtap="clear" animation="{{buttonAni}}"><image class="buttonIcon" src="../../img/clear.png" style="width:50%;height:50%;margin-top:9px"></image></view>
+<view class="add" bindtap="add" animation="{{buttonAni}}"><image class="buttonIcon" src="../../img/add.png" style="width:50%;height:50%;margin-top:9px"></image></view>
+
+<view class="zidingyi" bindtap="zidingyiadd" animation="{{buttonAni}}"><image class="buttonIcon" src="../../img/zidingyi.png" style="width:50%;height:50%;margin-top:9px"></image></view>
+
+<view class="qingchu" bindtap="clearbaobiao" animation="{{buttonAni}}"><image class="buttonIcon" src="../../img/qingchu.png" style="width:50%;height:50%;margin-top:9px"></image></view>
+
+<view class="addForm" animation="{{addAnimation}}">
+  <form bindsubmit="formSubmit" class="white">
+    
+    <view class="label">新的习惯</view>
+    <picker-view class="timePicker" value="{{first}}" indicator-style="height:50px" catchchange="pickerChange">
+
+  <picker-view-column>
+        <view class="habits" name="habits" wx:for="{{habits}}" style="line-height:50px;text-align:center">{{item}}</view>
+      </picker-view-column>
+
+      <picker-view-column>
+        <view class="hour" name="hour" wx:for="{{hours}}" style="line-height:50px;text-align:center;">{{item}}</view>
+      </picker-view-column>
+      
+      <picker-view-column>
+        <view class="min" name="min" wx:for="{{mins}}" style="line-height:50px;text-align:center">{{item}}</view>
+      </picker-view-column>
+
+      
+    </picker-view>
+    <view class="formButton">
+      <button size="mini" type="primary" form-type="submit">添加</button>
+      <button size="mini" type="warn" bindtap="cancel">取消</button>
+    </view>
+  </form>
+</view>
+
+<view class="zidingyiForm" animation="{{zidingyiAnimation}}">
+<form bindsubmit="zidingyiformSubmit" class="white">
+    <input class="todoName" name="todoName" type="text" placeholder=" 任务名" placeholder-class="place" maxlength="9" maxlength='20' />
+    <view class="label">自定义</view>
+    <picker-view class="timePicker" value="{{first}}" indicator-style="height:50px" catchchange="zidingyipickerChange">
+      <picker-view-column>
+        <view class="hour" name="hour" wx:for="{{hours}}" style="line-height:50px;text-align:center;">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="min" name="min" wx:for="{{mins}}" style="line-height:50px;text-align:center">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+    <view class="formButton">
+      <button size="mini" type="primary" form-type="submit">添加</button>
+      <button size="mini" type="warn" bindtap="zidingyicancel">取消</button>
+    </view>
+  </form>
+</view>
+
+
+<view class="editForm" animation="{{editAnimation}}">
+  <form bindsubmit="editSubmit" class="white">
+    <input class="todoName" name="todoName" type="text" placeholder=" 任务名" placeholder-class="place" maxlength="9" value="{{editName}}" disabled="disabled" maxlength='20'/>
+    <view class="label">Edit</view>
+    <picker-view class="timePicker" value="{{first}}" indicator-style="height:50px" catchchange="editPickerChange" value="{{valueID}}">
+
+      <picker-view-column>
+        <view class="hour" name="hour" wx:for="{{hours}}" style="line-height:50px;text-align:center;">{{item}}</view>
+      </picker-view-column>
+
+      <picker-view-column>
+        <view class="min" name="min" wx:for="{{mins}}" style="line-height:50px;text-align:center" value="{{minID}}">{{item}}</view>
+      </picker-view-column>
+
+    </picker-view>
+
+    <view class="formButton">
+      <button size="mini" type="warn" catchtap="del">删除</button>
+      <button size="mini" type="primary" form-type="submit">修改</button>
+    </view>
+  </form>
+</view>
+
+
+

@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index1/index1",
+    "pages/index2/index2",
+    "pages/index3/index3",
+    "pages/index4/index4"
+    
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1AAD19",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "ehabit",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icons/shouye.png",
+      "selectedIconPath": "icons/shouyejihuo.png"
+    },
+    {
+      "pagePath": "pages/index4/index4",
+      "text": "设置",
+      "iconPath": "icons/shezhi.png",
+      "selectedIconPath": "icons/shezhijihuo.png"
+    }
+    
+    ]
+  },
+ 
+  "sitemapLocation": "sitemap.json"
+}
